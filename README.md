@@ -3,10 +3,10 @@
 
 ## 1.Requirements  
 
-It is recommended to install this package with PHP version 7.1.3+ and Laravel Framework version 5.5+   
+It is recommended to install this package with PHP version 8.2.x+ and Laravel Framework version 10   
 
 ## 2.Installation  
-    composer require bkstar123/laravel-uploader
+    composer require enlinea777/laravel-uploader
 
 You can upload files to the backend either via a normal form submit or via AJAX calls (built by yourself or any third party plugins).  
 
@@ -18,15 +18,15 @@ You can upload files to the backend either via a normal form submit or via AJAX 
 - The Krajee plugin's full version can be installed via ```npm install bootstrap-fileinput```  
 
 - In order to use the included frontend assets, run
-```php artisan vendor:publish --tag=bkstar123_fileupload.assets```  
+```php artisan vendor:publish --tag=enlinea777_fileupload.assets```  
 
 ## 3.Usage
 
 ### 3.1 In Controller
 
-Firstly, you typehint ```Bkstar123\LaravelUploader\Contracts\FileUpload``` in a controller constructor to inject a FileUpload service.  
+Firstly, you typehint ```Enlinea777\LaravelUploader\Contracts\FileUpload``` in a controller constructor to inject a FileUpload service.  
 ```php
-use Bkstar123\LaravelUploader\Contracts\FileUpload;
+use Enlinea777\LaravelUploader\Contracts\FileUpload;
 -----------------
 protected $fileupload;
 
@@ -61,9 +61,9 @@ The backend default settings are as follows:
 ```
 
 You can change these default settings by using the following environment variables in .env:  
-- ```BKSTAR123_LARAVEL_UPLOADER_DEFAULT_DISK```
-- ```BKSTAR123_LARAVEL_UPLOADER_DEFAULT_DIRECTORY```
-- ```BKSTAR123_LARAVEL_UPLOADER_DEFAULT_MAX_FILE_SIZE``` (in bytes)
+- ```ENLINEA777_LARAVEL_UPLOADER_DEFAULT_DISK```
+- ```ENLINEA777_LARAVEL_UPLOADER_DEFAULT_DIRECTORY```
+- ```ENLINEA777_LARAVEL_UPLOADER_DEFAULT_MAX_FILE_SIZE``` (in bytes)
 
 **Note**: The inline settings will overwrite the default ones  
 
@@ -157,7 +157,7 @@ return json_encode([
 
 #### 3.2.3 AJAX uploading using @bkstar18/jquery-ajax-uploader plugin (***written by myself***)
 
-You can check its full documentation at https://github.com/bkstar123/jquery-ajax-uploader  
+You can check its full documentation at https://github.com/enlinea777/jquery-ajax-uploader  
 
 **Example use**:
 
@@ -180,11 +180,11 @@ try {
 - Alternatively, if you do not want to bundle this plugin into the main app.js, you can place the following line in ```webpack.mix.js```:  
 ```javascript
 mix.js('resources/js/app.js', 'public/js')
-   .copy('node_modules/@bkstar18/jquery-ajax-uploader/dist/bkstar123-ajax-uploader.min.js', 'public/js/bkstar123-ajax-uploader.min.js') // Add this line
+   .copy('node_modules/@bkstar18/jquery-ajax-uploader/dist/enlinea777-ajax-uploader.min.js', 'public/js/enlinea777-ajax-uploader.min.js') // Add this line
    .sass('resources/sass/app.scss', 'public/css');
 ```
 
-Then, include ```<script src="/js/bkstar123-ajax-uploader.min.js"></script>``` in any view where you want to use the plugin. Remember to load JQuery before using the plugin.  
+Then, include ```<script src="/js/enlinea777-ajax-uploader.min.js"></script>``` in any view where you want to use the plugin. Remember to load JQuery before using the plugin.  
 
 ***b) In HTML section***  
 ```html
@@ -198,7 +198,7 @@ Then, include ```<script src="/js/bkstar123-ajax-uploader.min.js"></script>``` i
 ***c) In Javascript section***  
 ```javascript
 $(document).ready(function () {
-    $('#image-upload').bkstar123_ajaxuploader({
+    $('#image-upload').enlinea777_ajaxuploader({
         allowedExtensions: ['png','jpg','jpeg'],
         batchSize: 5,
         outerClass: 'col-md-12',
@@ -241,7 +241,7 @@ Alternatively, ***if and only if*** this ```<meta>``` tag does not exist (maybe 
 
 ```javascript
 $(document).ready(function () {
-    $('#image-upload').bkstar123_ajaxuploader({
+    $('#image-upload').enlinea777_ajaxuploader({
         ...
         beforeSend: (xhr) => {
             xhr.setRequestHeader('X-CSRF-TOKEN', {!! json_encode(csrf_token()) !!});
@@ -251,8 +251,6 @@ $(document).ready(function () {
 });
 ```
 
-#### 3.2.4 AJAX uploading using @bkstar18/vue-ajax-uploader plugin (***written by myself***)
-Check https://github.com/bkstar123/vue-ajax-uploader for details.  
 
 ### 3.3 Physically remove an uploaded file
 

@@ -3,13 +3,13 @@
  * FileUploadMgmt service
  * Offer more functions to physically delete uploaded files
  *
- * @author: tuanha
- * @last-mod: 16-06-2019
+ * @author: John
+ * @last-mod: 10-11-2023
  */
-namespace Bkstar123\LaravelUploader\Services;
+namespace Enlinea777\LaravelUploader\Services;
 
 use Illuminate\Support\Facades\Storage;
-use Bkstar123\LaravelUploader\Services\FileUpload;
+use Enlinea777\LaravelUploader\Services\FileUpload;
 
 class FileUploadMgmt extends FileUpload
 {

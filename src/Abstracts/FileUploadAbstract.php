@@ -2,14 +2,14 @@
 /**
  * FileUploadAbstract
  *
- * @author: tuanha
- * @last-mod: 16-05-2019
+  * @author: John
+ * @last-mod: 10-11-2023
  */
-namespace Bkstar123\LaravelUploader\Abstracts;
+namespace Enlinea777\LaravelUploader\Abstracts;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
-use Bkstar123\LaravelUploader\Contracts\FileUpload as FileUploadContract;
+use Enlinea777\LaravelUploader\Contracts\FileUpload as FileUploadContract;
 
 abstract class FileUploadAbstract implements FileUploadContract
 {
@@ -27,10 +27,10 @@ abstract class FileUploadAbstract implements FileUploadContract
     protected function initializeDefaults()
     {
         $this->defaults = [
-            'disk' => config('bkstar123_fileupload.default_disk'),
-            'directory' => config('bkstar123_fileupload.default_directory'),
-            'maxFileSize' => config('bkstar123_fileupload.default_max_file_size'),
-            'allowedExtensions' => config('bkstar123_fileupload.default_allowed_extensions'),
+            'disk' => config('enlinea777_fileupload.default_disk'),
+            'directory' => config('enlinea777_fileupload.default_directory'),
+            'maxFileSize' => config('enlinea777_fileupload.default_max_file_size'),
+            'allowedExtensions' => config('enlinea777_fileupload.default_allowed_extensions'),
         ];
     }
 

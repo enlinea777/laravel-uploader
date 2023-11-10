@@ -2,10 +2,10 @@
 /**
  * FileUpload contract
  *
- * @author: tuanha
- * @last-mod: 15-06-2019
+ * @author: John
+ * @last-mod: 10-11-2023
  */
-namespace Bkstar123\LaravelUploader\Contracts;
+namespace Enlinea777\LaravelUploader\Contracts;
 
 use Illuminate\Http\Request;
 

@@ -2,14 +2,14 @@
 /**
  * LaravelUploaderServiceProvider
  *
- * @author: tuanha
- * @last-mod: 15-06-2019
+ * @author: John
+ * @last-mod: 10-11-2023
  */
-namespace Bkstar123\LaravelUploader;
+namespace Enlinea777\LaravelUploader;
 
 use Illuminate\Support\ServiceProvider;
-use Bkstar123\LaravelUploader\Services\FileUploadMgmt;
-use Bkstar123\LaravelUploader\Contracts\FileUpload as FileUploadContract;
+use Enlinea777\LaravelUploader\Services\FileUploadMgmt;
+use Enlinea777\LaravelUploader\Contracts\FileUpload as FileUploadContract;
 
 class LaravelUploaderServiceProvider extends ServiceProvider
 {
@@ -22,7 +22,7 @@ class LaravelUploaderServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/Resources/Assets' => public_path('vendor/fileupload'),
-        ], 'bkstar123_fileupload.assets');
+        ], 'enlinea777_fileupload.assets');
     }
 
     /**
@@ -33,6 +33,6 @@ class LaravelUploaderServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(FileUploadContract::class, FileUploadMgmt::class);
-        $this->mergeConfigFrom(__DIR__.'/Config/bkstar123_fileupload.php', 'bkstar123_fileupload');
+        $this->mergeConfigFrom(__DIR__.'/Config/enlinea777_fileupload.php', 'enlinea777_fileupload');
     }
 }

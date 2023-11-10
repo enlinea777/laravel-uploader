@@ -2,15 +2,15 @@
 /**
  * FileUpload service
  *
- * @author: tuanha
- * @last-mod: 16-05-2019
+ * @author: John
+ * @last-mod: 10-11-2023
  */
-namespace Bkstar123\LaravelUploader\Services;
+namespace Enlinea777\LaravelUploader\Services;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
-use Bkstar123\LaravelUploader\Abstracts\FileUploadAbstract;
+use Enlinea777\LaravelUploader\Abstracts\FileUploadAbstract;
 
 class FileUpload extends FileUploadAbstract
 {
